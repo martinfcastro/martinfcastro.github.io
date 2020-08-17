@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A jugar!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+</head>
+<body onload="aJugar()">
+    <div class="jumbotron">
+        <p class="display-4 mt-3"> Adivina el número de 4 dígitos! </p>
+        
+        
+         
+        <div class="class=doplay flex text-right">
+            <button id="reiniciar" type="submit" class="btn btn-outline-dark mt-4"  >Reiniciar</button>
+            <button id="rendirse" type="button" class="btn btn-outline-dark mt-4">Rendirse</button>
+            <p class="lead mt-3"> <b>Pista: </b> Ninguno de los números se repite...</p>
+                        
+        </div>
+
+        
+        <hr class="my-4">
+
+        <h2  id="perdioGano" ></h2>
+        
+        <form method="post">
+            
+            <div class="form-row float-clear mt-6">
+                
+                <input maxlength="1" name="numeroUno"  class="form-group col-md-1"> 
+                <input maxlength="1" name="numeroDos"  class="form-group col-md-1">
+                <input maxlength="1" name="numeroTres"  class="form-group col-md-1">
+                <input maxlength="1" name="numeroCuatro"  class="form-group col-md-1">
+            </div>
+            <button id="arriesgar" type="submit" class="btn btn-outline-primary"> Arriesgar!</button>
+            <span id="vidas" class="badge badge-primary ml-1"></span>
+
+        </form>
+        <br>
+        
+        <div id="alerta">
+            <div id="regulares"></div>
+            <div id="buenos"></div>
+        </div>
+
+
+        <table  id="tabla" class="table table-dark align-self-center text-center mt-5 d-none col-md-6">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th scope="col">Número arriesgado</th>
+                
+              </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+ 
+        
+    </div>
+    
+    
+ 
+  
+
+    <script src="app.js"></script>
+</body>
+</html>
