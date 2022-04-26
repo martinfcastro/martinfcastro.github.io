@@ -217,6 +217,24 @@ jQuery(function($) {'use strict';
 
 	});
 
-
-
+	// EmailJS
+	emailjs.init('kavFN5Weu5b_bPxdk');
+	$('#main-contact-form').submit(function(event){
+		event.preventDefault();
+		this.contact_number.value = Math.random() * 100000 | 0;
+		$('#form_validado').prop('disabled', true)
+		$('#form_msg').html(
+			'<div class="alert alert-info">Estamos enviando su email...</div>'
+		);
+		emailjs.sendForm('contact_service', 'contact_form', this)
+			.then(function() {
+				$('#form_msg').html(
+					'<div class="alert alert-success">Tu mensaje ha sido enviado correctamente. Muchas gracias</div>'
+				  );
+			}, function(error) {
+				$('#form_msg').html(
+					'<div class="alert alert-danger">Lo sentimos, ha ocurrido un error. Por favor, enviar mail a <a href="mailto:info@focusit.com.ar">&nbsp<i class="fa fa-envelope"></i>&nbsp info@focusit.com.ar</a></div>'
+				  );
+			});
+	});
 })

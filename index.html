@@ -442,8 +442,10 @@
                     <h2 class="section-title text-center wow fadeInDown animated" style="visibility: visible;">Contáctenos</h2>
                     <p class="text-center wow fadeInDown animated" style="visibility: visible;">Escríbanos un mensaje y déjenos su contacto. Le daremos una respuesta en cuanto nos sea posible.</p>
                 </div>
-                <form id="main-contact-form" name="contact-form" method="post" action="enviar2.php">
+                <form id="main-contact-form" name="contact-form">
                     <div class="col-lg-6 animated animate-from-left" style="opacity: 1; left: 0px;">
+
+                        <input type="hidden" name="contact_number">
 
                         <div class="form-group">
                             <label for="name">Tu nombre *</label>
@@ -480,13 +482,13 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="text-center">
-
                           <button id="form_validado" type="submit" class="btn btn-primary btn-lg btn-send-msg">Enviar</button>
-
                     </div>
-
                 </form>
+            </div>
 
+            <div class="row">
+                <div id="form_msg" class="text-center form-msg"></div>
             </div>
         </div>
                 
@@ -519,6 +521,7 @@
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/jquery.inview.min.js"></script>
     <script src="js/wow.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
